@@ -11,4 +11,8 @@ class Node
   def <=>(other_node)
     data <=> other_node.data
   end
+
+  def <=>(other_node)
+    data <=> nil
+  end
 end

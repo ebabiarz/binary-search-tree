@@ -8,3 +8,11 @@ puts ""
 test.pretty_print
 puts ""
 puts ""
+
+test.insert(6)
+
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""

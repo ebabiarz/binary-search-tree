@@ -26,6 +26,21 @@ class Tree
     return root
   end
 
+  def insert(data, current_node = @root)
+
+    if current_node == nil
+      return Node.new(data)
+    elsif current_node.data == data
+      return current_node
+    elsif current_node.data > data
+      current_node.left = insert(data, current_node.left)
+    else
+      current_node.right = insert(data, current_node.right)
+    end
+
+    return current_node
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
