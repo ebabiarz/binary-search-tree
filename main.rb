@@ -9,7 +9,39 @@ test.pretty_print
 puts ""
 puts ""
 
-test.insert(6)
+test.delete(3)
+
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""
+
+test.insert(3)
+
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""
+
+test.delete(1)
+
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""
+
+test.insert(1)
+
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""
+
+test.delete(67)
 
 puts ""
 puts ""

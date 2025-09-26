@@ -41,6 +41,40 @@ class Tree
     return current_node
   end
 
+  def delete(data, current_node = @root)
+    if current_node == nil
+      return current_node
+    end
+
+    if current_node.data > data
+      current_node.left = delete(data, current_node.left)
+    elsif current_node.data < data
+      current_node.right = delete(data, current_node.right)
+    else
+      if current_node.left == nil
+        return current_node.right
+      elsif current_node.right == nil
+        return current_node.left
+      end
+
+      succ = get_successor(current_node)
+      current_node.data = succ.data
+      current_node.right = delete(succ.data, current_node.right)
+    end
+
+    return current_node
+  end
+
+  def get_successor(current_node)
+    current_node = current_node.right
+
+    while current_node != nil && current_node.left != nil
+      current_node = current_node.left
+    end
+
+    return current_node
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
