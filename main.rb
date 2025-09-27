@@ -9,42 +9,47 @@ test.pretty_print
 puts ""
 puts ""
 
-test.delete(3)
+p test.find(23)
+puts ""
+puts ""
+p test.find(57)
 
-puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
+# test.delete(3)
 
-test.insert(3)
+# puts ""
+# puts ""
+# test.pretty_print
+# puts ""
+# puts ""
 
-puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
+# test.insert(3)
 
-test.delete(1)
+# puts ""
+# puts ""
+# test.pretty_print
+# puts ""
+# puts ""
 
-puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
+# test.delete(1)
 
-test.insert(1)
+# puts ""
+# puts ""
+# test.pretty_print
+# puts ""
+# puts ""
 
-puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
+# test.insert(1)
 
-test.delete(67)
+# puts ""
+# puts ""
+# test.pretty_print
+# puts ""
+# puts ""
 
-puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
+# test.delete(67)
+
+# puts ""
+# puts ""
+# test.pretty_print
+# puts ""
+# puts ""

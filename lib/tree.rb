@@ -75,6 +75,18 @@ class Tree
     return current_node
   end
 
+  def find(data, current_node = @root)
+    if current_node == nil
+      return nil
+    elsif current_node.data == data
+      return current_node
+    elsif current_node.data > data
+      return find(data, current_node.left)
+    else
+      return find(data, current_node.right)
+    end
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
