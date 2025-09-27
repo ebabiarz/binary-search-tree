@@ -23,3 +23,12 @@ puts ""
 puts ""
 
 p test.balanced?
+
+puts "Preorder"
+p test.preorder
+puts ""
+puts "Inorder"
+p test.inorder
+puts ""
+puts "Postorder"
+p test.postorder

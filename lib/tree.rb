@@ -167,6 +167,9 @@ class Tree
     elsif current_node.left == nil
       postorder(current_node.right, array)
       array << current_node.data
+    elsif current_node.right == nil
+      postorder(current_node.left, array)
+      array << current_node.data
     else
       postorder(current_node.left, array)
       postorder(current_node.right, array)
