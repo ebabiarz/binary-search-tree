@@ -87,6 +87,35 @@ class Tree
     end
   end
 
+  def level_order(current_node = @root, array = [], queue = [])
+    
+    if current_node != nil
+      array << current_node.data
+    end
+
+    if current_node.left != nil
+      queue.push(current_node.left)
+    end
+
+    if current_node.right != nil
+      queue.push(current_node.right)
+    end
+
+    if queue.empty? == false
+      level_order(queue.shift, array, queue)
+    end
+    
+    if block_given?
+      adjusted_array = []
+      array.each do |element|
+        adjusted_array << yield(element)
+      end
+      return adjusted_array
+    else
+      return array
+    end
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
