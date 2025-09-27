@@ -32,3 +32,12 @@ p test.inorder
 puts ""
 puts "Postorder"
 p test.postorder
+
+test.rebalance
+puts ""
+puts ""
+test.pretty_print
+puts ""
+puts ""
+
+p test.balanced?

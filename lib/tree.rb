@@ -226,7 +226,9 @@ class Tree
       right_height = height(current_node.right.data, current_node.right) + 1
     end
 
-    if current_node.left == nil && right_height > 1
+    if current_node.left == nil && current_node.right == nil
+      return
+    elsif current_node.left == nil && right_height > 1
       return false
     elsif current_node.right == nil && left_height > 1
       return false
@@ -238,11 +240,13 @@ class Tree
           return false
         end
       end
-    else
-      return
     end
 
     return true
+  end
+
+  def rebalance
+    @root = tree_from_sorted_array(self.inorder)    
   end
 
   def depth(data, current_node = @root, depth = 0)
