@@ -137,6 +137,29 @@ class Tree
     end
   end
 
+  def inorder(current_node = @root, array = [])
+    if current_node == nil
+      return
+    elsif current_node.left == nil
+      array << current_node.data
+      inorder(current_node.right, array)
+    else
+      inorder(current_node.left, array)
+      array << current_node.data
+      inorder(current_node.right, array)
+    end
+
+    if block_given?
+      adjusted_array = []
+      array.each do |element|
+        adjusted_array << yield(element)
+      end
+      return adjusted_array
+    else
+      return array
+    end
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
