@@ -215,6 +215,33 @@ class Tree
     return height
   end
 
+  def balanced?(current_node = @root, height = 0)
+    if current_node.left != nil
+      left_height = height(current_node.left.data, current_node.left) + 1
+    end
+    if current_node.right != nil
+      right_height = height(current_node.right.data, current_node.right) + 1
+    end
+
+    if current_node.left == nil && right_height > 1
+      return false
+    elsif current_node.right == nil && left_height > 1
+      return false
+    elsif current_node.left != nil && current_node.right != nil
+      if left_height - right_height > 1 || right_height - left_height > 1
+        return false
+      else
+        if balanced?(current_node.left) == false || balanced?(current_node.right) == false
+          return false
+        end
+      end
+    else
+      return
+    end
+
+    return true
+  end
+
   def depth(data, current_node = @root, depth = 0)
     if current_node == nil
       return nil
