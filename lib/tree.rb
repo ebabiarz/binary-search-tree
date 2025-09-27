@@ -185,6 +185,10 @@ class Tree
   end
 
   def height(data, current_node = find(data), height = 0)
+    if current_node == nil
+      return nil
+    end
+
     if current_node.left == nil && current_node.right == nil
       return height
     elsif current_node.right == nil
@@ -196,6 +200,7 @@ class Tree
     else
       left_height = height(data, current_node.left)
       right_height = height(data, current_node.right)
+
       if left_height <= right_height
         height += right_height
         height += 1
@@ -208,6 +213,20 @@ class Tree
     end
 
     return height
+  end
+
+  def depth(data, current_node = @root, depth = 0)
+    if current_node == nil
+      return nil
+    elsif current_node.data == data
+      return depth
+    elsif current_node.data > data
+      depth += 1
+      return depth(data, current_node.left, depth)
+    else
+      depth += 1
+      return depth(data, current_node.right, depth)
+    end
   end
 
   def merge_sort(array)

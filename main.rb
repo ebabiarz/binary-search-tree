@@ -13,7 +13,9 @@ test.pretty_print
 puts ""
 puts ""
 
-puts test.height(8)
+p test.depth(5001)
+
+# puts test.height(8)
 
 # p test.level_order {|value| value + 2}
 
