@@ -9,7 +9,9 @@ test.pretty_print
 puts ""
 puts ""
 
-p test.level_order {|value| value + 2}
+p test.preorder {|value| value + 2}
+
+# p test.level_order {|value| value + 2}
 
 # p test.level_order
 

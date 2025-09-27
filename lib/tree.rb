@@ -116,6 +116,27 @@ class Tree
     end
   end
 
+  def preorder(current_node = @root, array = [])
+    if current_node == nil
+      return
+    else
+      array << current_node.data
+    end
+
+    preorder(current_node.left, array)
+    preorder(current_node.right, array)
+
+    if block_given?
+      adjusted_array = []
+      array.each do |element|
+        adjusted_array << yield(element)
+      end
+      return adjusted_array
+    else
+      return array
+    end
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
