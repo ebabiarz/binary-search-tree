@@ -1,43 +1,67 @@
 require './lib/tree'
 require './lib/node'
 
-test = Tree.new([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324])
+test = Tree.new(Array.new(15) { rand(1..100)})
 
 puts ""
-puts ""
-test.pretty_print
-puts ""
+puts test.pretty_print
 puts ""
 
-p test.balanced?
-
-test.insert(10000)
-test.insert(6000)
-test.insert(5000)
-test.insert(2)
+if test.balanced? == true
+  puts "The tree is balanced"
+else
+  puts "The tree is not balanced"
+end
 
 puts ""
+puts "Level Order"
+p test.level_order
 puts ""
-test.pretty_print
-puts ""
-puts ""
-
-p test.balanced?
-
 puts "Preorder"
 p test.preorder
 puts ""
-puts "Inorder"
+puts "Postorder"
+p test.postorder
+puts ""
+puts "In Order"
 p test.inorder
+
+test.insert(153)
+test.insert(245)
+test.insert(642)
+test.insert(103)
+
+puts ""
+puts test.pretty_print
+
+puts ""
+if test.balanced? == true
+  puts "The tree is balanced"
+else
+  puts "The tree is not balanced"
+end
+puts ""
+
+test.rebalance
+
+puts test.pretty_print
+
+puts ""
+if test.balanced? == true
+  puts "The tree is balanced"
+else
+  puts "The tree is not balanced"
+end
+
+puts ""
+puts "Level Order"
+p test.level_order
+puts ""
+puts "Preorder"
+p test.preorder
 puts ""
 puts "Postorder"
 p test.postorder
-
-test.rebalance
 puts ""
-puts ""
-test.pretty_print
-puts ""
-puts ""
-
-p test.balanced?
+puts "In Order"
+p test.inorder
