@@ -9,8 +9,8 @@ test.pretty_print
 puts ""
 puts ""
 
-p test.inorder
-p test.inorder {|value| value + 2}
+p test.postorder
+p test.postorder {|value| value + 2}
 
 # p test.level_order {|value| value + 2}
 

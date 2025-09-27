@@ -160,6 +160,30 @@ class Tree
     end
   end
 
+  def postorder(current_node = @root, array = [])
+    if current_node.left == nil && current_node.right == nil
+      array << current_node.data
+      return
+    elsif current_node.left == nil
+      postorder(current_node.right, array)
+      array << current_node.data
+    else
+      postorder(current_node.left, array)
+      postorder(current_node.right, array)
+      array << current_node.data
+    end
+
+    if block_given?
+      adjusted_array = []
+      array.each do |element|
+        adjusted_array << yield(element)
+      end
+      return adjusted_array
+    else
+      return array
+    end
+  end
+
   def merge_sort(array)
     if array.length <= 1
       return array
